@@ -1,0 +1,648 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>LGPD</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	text-indent: -1.7em;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+}
+.highlight-gray {
+	color: rgb(155,154,151);
+}
+.highlight-brown {
+	color: rgb(100,71,58);
+}
+.highlight-orange {
+	color: rgb(217,115,13);
+}
+.highlight-yellow {
+	color: rgb(223,171,1);
+}
+.highlight-teal {
+	color: rgb(15,123,108);
+}
+.highlight-blue {
+	color: rgb(11,110,153);
+}
+.highlight-purple {
+	color: rgb(105,64,165);
+}
+.highlight-pink {
+	color: rgb(173,26,114);
+}
+.highlight-red {
+	color: rgb(224,62,62);
+}
+.highlight-gray_background {
+	background: rgb(235,236,237);
+}
+.highlight-brown_background {
+	background: rgb(233,229,227);
+}
+.highlight-orange_background {
+	background: rgb(250,235,221);
+}
+.highlight-yellow_background {
+	background: rgb(251,243,219);
+}
+.highlight-teal_background {
+	background: rgb(221,237,234);
+}
+.highlight-blue_background {
+	background: rgb(221,235,241);
+}
+.highlight-purple_background {
+	background: rgb(234,228,242);
+}
+.highlight-pink_background {
+	background: rgb(244,223,235);
+}
+.highlight-red_background {
+	background: rgb(251,228,228);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(55, 53, 47, 0.6);
+	fill: rgba(55, 53, 47, 0.6);
+}
+.block-color-brown {
+	color: rgb(100,71,58);
+	fill: rgb(100,71,58);
+}
+.block-color-orange {
+	color: rgb(217,115,13);
+	fill: rgb(217,115,13);
+}
+.block-color-yellow {
+	color: rgb(223,171,1);
+	fill: rgb(223,171,1);
+}
+.block-color-teal {
+	color: rgb(15,123,108);
+	fill: rgb(15,123,108);
+}
+.block-color-blue {
+	color: rgb(11,110,153);
+	fill: rgb(11,110,153);
+}
+.block-color-purple {
+	color: rgb(105,64,165);
+	fill: rgb(105,64,165);
+}
+.block-color-pink {
+	color: rgb(173,26,114);
+	fill: rgb(173,26,114);
+}
+.block-color-red {
+	color: rgb(224,62,62);
+	fill: rgb(224,62,62);
+}
+.block-color-gray_background {
+	background: rgb(235,236,237);
+}
+.block-color-brown_background {
+	background: rgb(233,229,227);
+}
+.block-color-orange_background {
+	background: rgb(250,235,221);
+}
+.block-color-yellow_background {
+	background: rgb(251,243,219);
+}
+.block-color-teal_background {
+	background: rgb(221,237,234);
+}
+.block-color-blue_background {
+	background: rgb(221,235,241);
+}
+.block-color-purple_background {
+	background: rgb(234,228,242);
+}
+.block-color-pink_background {
+	background: rgb(244,223,235);
+}
+.block-color-red_background {
+	background: rgb(251,228,228);
+}
+.select-value-color-default { background-color: rgba(206,205,202,0.5); }
+.select-value-color-gray { background-color: rgba(155,154,151, 0.4); }
+.select-value-color-brown { background-color: rgba(140,46,0,0.2); }
+.select-value-color-orange { background-color: rgba(245,93,0,0.2); }
+.select-value-color-yellow { background-color: rgba(233,168,0,0.2); }
+.select-value-color-green { background-color: rgba(0,135,107,0.2); }
+.select-value-color-blue { background-color: rgba(0,120,223,0.2); }
+.select-value-color-purple { background-color: rgba(103,36,222,0.2); }
+.select-value-color-pink { background-color: rgba(221,0,129,0.2); }
+.select-value-color-red { background-color: rgba(255,0,26,0.2); }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="5b4ac458-f596-4446-a237-7fbb416d8ada" class="page sans"><header><img class="page-cover-image" src="icons/LGPD-4.png" style="object-position:center 50%"/><div class="page-header-icon page-header-icon-with-cover"><img class="icon" src="icons/gov.png"/></div><h1 class="page-title">LGPD</h1></header><div class="page-body"><p id="dc245498-23ef-4153-81f0-8318d61435f5" class=""><strong>disclaimer:</strong> Vale lembrar que esse documento é uma cópia do que está escrito na LGPD para melhor visualização, ainda recomendo que a leia totalmente no site do governo.</p><h1 id="a4fb9cf5-d5ed-491b-9fb1-64cdeea76c87" class="">O que é a LGPD</h1><p id="68aaac1e-c17d-4b34-b05e-ab255050816d" class="">LGPD é a Lei Geral de Proteção de Dados Pessoais. <strong>LEI Nº 13.709, DE 14 DE AGOSTO DE 2018</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="f7f3b048-af10-444f-a429-0a709847a785"><div style="font-size:1.5em"><img class="icon" src="icons/gov%201.png"/></div><div style="width:100%">http://www.planalto.gov.br/ccivil_03/_ato2015-2018/2018/lei/l13709.htm</div></figure><p id="2937d33c-f164-42b3-9262-fbb4e674f6a6" class="">Importante <strong>LEI Nº 13.853, DE 8 DE JULHO DE 2019</strong></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="58730523-c406-4ceb-8132-3b6f0ab56b1b"><div style="font-size:1.5em"><img class="icon" src="icons/gov%202.png"/></div><div style="width:100%">http://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2019/Lei/L13853.htm#art2</div></figure><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ac1f3cfe-26c4-424e-8bcf-3dc5e9fd21df"><div style="font-size:1.5em"><img class="icon" src="icons/GoogleIcon.png"/></div><div style="width:100%">https://www.embrapa.br/manual-de-editoracao/padronizacao-e-estilo/numeral/numerais-leis-documentos-oficiais</div></figure><hr id="d8f20448-009b-4486-ab0a-01ff9f0a54e3"/><p id="0384e3f4-041d-499e-af3c-b32f2b017cdf" class="">Tudo que você precisa saber sobre a LGPD! - <a href="https://www.youtube.com/channel/UC6oH_bHP8zkU152HcAgNwsw">CHC Advocacia</a></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="ef34df2e-49a1-4936-86f2-01974e7e55dd"><div style="font-size:1.5em"><img class="icon" src="icons/YouTubeIcon.png"/></div><div style="width:100%">https://www.youtube.com/watch?v=hu6XIc7QVnE</div></figure><p id="bcb2e216-7410-4ce9-b257-865fb2519e25" class="">TUDO O QUE REALMENTE PRECISA SABER SOBRE A #LGPD - <a href="https://www.youtube.com/channel/UCgCIqDrL0_z5sMMwrFvc0dg">Denise Tavares</a></p><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="72389321-0bdb-4c7a-882f-48e65c0a5693"><div style="font-size:1.5em"><img class="icon" src="icons/YouTubeIcon%201.png"/></div><div style="width:100%">https://www.youtube.com/watch?v=YBMq5c2ssY0</div></figure><hr id="8705a363-aea5-40d4-a567-879357aa692f"/><p id="6c30b596-1ba3-48dc-a6dc-5adeb89d2168" class="">Importante:<div class="indented"><ul id="910635ad-9312-4c95-b34d-303e53d31cf4" class="bulleted-list"><li>Art. 1º - Do que se trata</li></ul><ul id="eb36a1f2-de11-4dda-86ca-a40260f1ba3b" class="bulleted-list"><li>Art. 3º - Onde se aplica</li></ul><ul id="786fe15d-c14a-4ae8-9a03-08def83dbf2e" class="bulleted-list"><li>Art. 4º - Onde não se aplica</li></ul><ul id="ef200b0f-1e5b-469a-b6aa-265074b02f07" class="bulleted-list"><li>Art. 7º - Tratamento de dados pessoais</li></ul><ul id="ccc066a2-c1c4-4c7a-a9ab-4c3e95d338ff" class="bulleted-list"><li>Art. 11º - Tratamento de dados pessoais sensíveis</li></ul></div></p><hr id="62ed6b60-71a2-4126-8f72-4a644c91b319"/><h1 id="825f9b0a-0dfa-4ac2-9a69-7f802c273481" class="">CAPÍTULO I - DISPOSIÇÕES PRELIMINARES</h1><p id="0c51fbe7-5cde-4ed0-9635-902eb60f3679" class="">Art. 1º - Essa lei trata sobre tratamento de dados pessoais, INCLUINDO, e não só nos meios digitais, com o objetivo de proteger os direitos de liberdade e de privacidade.</p><p id="71456d9e-983d-47bb-afa9-42b2715f6243" class="">
+</p><p id="06263f02-11dd-4246-a5fa-6d5338730e3a" class="">Art. 2º - A disciplina da proteção de dados pessoais tem como fundamentos:</p><ul id="93a89c73-9da4-4a7f-a02c-28f88851b006" class="bulleted-list"><li>respeito à privacidade</li></ul><ul id="2ff9e12c-62bc-4feb-8a13-ed12810f6eff" class="bulleted-list"><li><a href="https://www.google.com/url?sa=t&amp;rct=j&amp;q=&amp;esrc=s&amp;source=web&amp;cd=&amp;cad=rja&amp;uact=8&amp;ved=2ahUKEwiu-pq8y7nyAhXVCtQKHboSDUIQFnoECBwQAw&amp;url=https%3A%2F%2Fwww.conjur.com.br%2F2020-out-26%2Fleonardo-bessa-lgpd-direito-autodeterminacao-informativa%23%3A~%3Atext%3DO%2520direito%2520%25C3%25A0%2520autodetermina%25C3%25A7%25C3%25A3o%2520informativa%2520se%2520constitui%2520na%2520faculdade%2520que%2Cterceiros%252C%2520bem%2520como%2520acessar%2520bancos&amp;usg=AOvVaw298jjuPiZNiDy7xqW7ut9w">autodeterminação informativa</a><p id="30b7b9fd-660d-4cfc-8c4a-eee2fb753a69" class="">Compreendido como forma de garantir o controle do cidadão sobre suas próprias informações.</p></li></ul><ul id="26379aec-880f-42e5-a0d3-c985a1c7d109" class="bulleted-list"><li>liberdade de expressão, de informação, de comunicação e de opinião</li></ul><ul id="d262a208-d95f-4df2-91f9-c00ea3eccfb4" class="bulleted-list"><li>inviolabilidade da intimidade, da honra e da imagem<p id="303d8d1d-8a77-425d-ab90-45f4f3f4c6f4" class="">direito à privacidade, direito à honra, à reputação ou consideração social.</p></li></ul><ul id="7b303914-f78e-4881-ba03-6630a6b6a6e9" class="bulleted-list"><li>desenvolvimento econômico e tecnológico e a inovação</li></ul><ul id="4890e714-70ed-4620-909f-b5cbf0661b3f" class="bulleted-list"><li>livre iniciativa, a livre concorrência e a defesa do consumidor</li></ul><ul id="7038d75e-2fd8-42fa-832a-c0f999ffb530" class="bulleted-list"><li>os direitos humanos, o livre desenvolvimento da personalidade, a dignidade e o exercício da cidadania pelas pessoas naturais</li></ul><figure class="block-color-gray_background callout" style="white-space:pre-wrap;display:flex" id="1c782835-89d5-4504-becf-f15c66da85ef"><div style="font-size:1.5em"><img class="icon" src="icons/GoogleIcon%201.png"/></div><div style="width:100%">https://www.escolaaberta3setor.org.br/post/conheça-os-fundamentos-da-lei-geral-de-proteção-de-dados-pessoais-lgpd</div></figure><p id="f28fb61e-197b-4864-a6f2-24f96eed0d71" class="">
+</p><p id="650fe5c9-7a6a-40c2-9a1e-3a9abcea83de" class="">Art. 3º - Esta Lei aplica-se a qualquer pessoa, independentemente do meio, do país de sua sede ou do país onde estejam localizados os dados, desde que:</p><ul id="4e63c832-5c4e-4d43-bb03-48949383d090" class="bulleted-list"><li>a operação de tratamento seja realizada no território nacional</li></ul><ul id="ab86e91a-b03e-4a5e-b2eb-f45b8025cab5" class="bulleted-list"><li>atividade de tratamento tenha por objetivo a oferta ou o fornecimento de bens ou serviços ou o tratamento de dados de indivíduos localizados no território nacional</li></ul><ul id="a9d0dbcf-e3ea-475e-a1a0-c91d7679583e" class="bulleted-list"><li>os dados pessoais objeto do tratamento tenham sido coletados no território nacional<p id="7aa7f6e8-d4a9-4b7d-b491-0b3e192fb109" class="">Consideram-se coletados no território nacional os dados pessoais cujo titular nele se encontre no momento da coleta.</p></li></ul><p id="a6638698-ba7f-4b48-a2b8-305064a51da1" class="">
+</p><p id="58866527-3a15-48c6-9465-ad726534c3b8" class="">Art. 4º - Esta Lei não se aplica ao tratamento de dados pessoais:</p><ul id="97063912-606c-422b-8912-dd1d063e3417" class="bulleted-list"><li>realizado por pessoa para fins exclusivamente particulares e não econômicos<p id="6585cf10-39a1-4a88-9e6f-96a42acf3764" class="">realizado para fins exclusivamente:</p><ul id="e716e86a-f4ab-402e-9eba-2458d7539678" class="bulleted-list"><li>jornalístico e artísticos</li></ul><ul id="b963bf85-c6bd-44ce-9469-ccec8c603d13" class="bulleted-list"><li>acadêmicos ( aplicando-se a esta hipótese os arts. 7º e 11 desta Lei ) </li></ul><p id="b4f9ab8f-0454-43d1-ac71-10a6e1196916" class="">realizado para fins exclusivos de:</p><ul id="aad7f0e8-efac-4ff2-910a-e05790ca0929" class="bulleted-list"><li>segurança pública</li></ul><ul id="6ec6ea90-d7f9-4052-aea6-059098927d26" class="bulleted-list"><li>defesa nacional</li></ul><ul id="ec4b0dda-83e9-43f0-8c76-b0770ab3ff66" class="bulleted-list"><li>segurança do Estado</li></ul><ul id="ec0d2c9a-50e0-47b5-a725-336c32cf5175" class="bulleted-list"><li>atividades de investigação e repressão de infrações penais</li></ul><ul id="e5067f62-4c5d-4d34-9948-5bc8cf5543ac" class="bulleted-list"><li>provenientes de fora do território nacional e que não sejam objeto de comunicação, uso compartilhado de dados com agentes de tratamento brasileiros ou objeto de transferência internacional de dados com outro país que não o de proveniência, desde que o país de proveniência proporcione grau de proteção de dados pessoais adequado ao previsto nesta Lei.</li></ul><p id="bc1c41cf-7b4f-4dd4-a096-78b71453599e" class="">transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro (Art. 5º, XV, LGPD)</p><p id="cfe55949-4ffb-4c50-b9ff-d8ef1d3979d2" class="">agentes de tratamento de dados pessoais são o operador e o controlador, os quais são assim definidos pela legislação: Art. 5º, VI – controlador: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais</p></li></ul><p id="43822566-b16a-45fc-9458-52c47fee0d51" class="">
+</p><p id="ae60a437-7cde-4b7f-aa55-2d6fad954b54" class="">Art. 5º - Para os fins desta Lei, considera-se:</p><ul id="65fc9cc4-509a-40e5-9a5f-412a2a4f274c" class="bulleted-list"><li>dado pessoal: informação relacionada a pessoa natural identificada ou identificável</li></ul><ul id="f4235d3a-7984-4ed4-b160-e20ed09c10ad" class="bulleted-list"><li>dado pessoal sensível: dado pessoal sobre origem racial ou étnica, convicção religiosa, opinião política, filiação a sindicato ou a organização de caráter religioso, filosófico ou político, dado referente à saúde ou à vida sexual, dado genético ou biométrico, quando vinculado a uma pessoa natural</li></ul><ul id="32257702-44e6-4090-ab0f-da2be7881825" class="bulleted-list"><li>dado anonimizado: dado relativo a titular que não possa ser identificado, considerando a utilização de meios técnicos razoáveis e disponíveis na ocasião de seu tratamento</li></ul><ul id="3899bc84-9d7c-4b16-b429-c8133f95500f" class="bulleted-list"><li>banco de dados: conjunto estruturado de dados pessoais, estabelecido em um ou em vários locais, em suporte eletrônico ou físico</li></ul><ul id="24503d20-02b4-4841-8e41-7153e19b2a2f" class="bulleted-list"><li>titular: pessoa natural a quem se referem os dados pessoais que são objeto de tratamento</li></ul><ul id="f1495e22-3bcf-43cf-86a8-147b9cb24b45" class="bulleted-list"><li>controlador: pessoa natural ou jurídica, de direito público ou privado, a quem competem as decisões referentes ao tratamento de dados pessoais</li></ul><ul id="062872da-9565-4e83-b268-bb7553696d43" class="bulleted-list"><li>operador: pessoa natural ou jurídica, de direito público ou privado, que realiza o tratamento de dados pessoais em nome do controlador</li></ul><ul id="48fe4349-ed56-413d-95da-1f4029792c76" class="bulleted-list"><li>encarregado: pessoa indicada pelo controlador e operador para atuar como canal de comunicação entre o controlador, os titulares dos dados e a <a href="http://www.planalto.gov.br/ccivil_03/_Ato2019-2022/2019/Lei/L13853.htm#art2">Autoridade Nacional de Proteção de Dados (ANPD)</a></li></ul><ul id="53bead18-a361-45ee-8dc1-4a52f0f61f02" class="bulleted-list"><li>agentes de tratamento: o controlador e o operador</li></ul><ul id="572a3cb9-1ee1-44ed-b869-b53b1ddd3852" class="bulleted-list"><li>tratamento: toda operação realizada com dados pessoais, como as que se referem a coleta, produção, recepção, classificação, utilização, acesso, reprodução, transmissão, distribuição, processamento, arquivamento, armazenamento, eliminação, avaliação ou controle da informação, modificação, comunicação, transferência, difusão ou extração</li></ul><ul id="6e69e7c5-31f3-43c2-a562-6b0ebbd0aa8b" class="bulleted-list"><li>anonimização: utilização de meios técnicos razoáveis e disponíveis no momento do tratamento, por meio dos quais um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo</li></ul><ul id="7074da13-4560-423b-b569-15dc1d55635b" class="bulleted-list"><li>consentimento: manifestação livre, informada e inequívoca pela qual o titular concorda com o tratamento de seus dados pessoais para uma finalidade determinada</li></ul><ul id="c4f91c3c-f09b-4a26-8546-4c7efac611e1" class="bulleted-list"><li>bloqueio: suspensão temporária de qualquer operação de tratamento, mediante guarda do dado pessoal ou do banco de dados</li></ul><ul id="b75857e8-a15d-4daf-acef-0438ce450206" class="bulleted-list"><li>eliminação: exclusão de dado ou de conjunto de dados armazenados em banco de dados, independentemente do procedimento empregado</li></ul><ul id="d9c3d679-d696-4c87-b3fa-2173ed408050" class="bulleted-list"><li>transferência internacional de dados: transferência de dados pessoais para país estrangeiro ou organismo internacional do qual o país seja membro</li></ul><ul id="59fe320b-8ffc-4918-a06a-3761eb269342" class="bulleted-list"><li>uso compartilhado de dados: comunicação, difusão, transferência internacional, interconexão de dados pessoais ou tratamento compartilhado de bancos de dados pessoais por órgãos e entidades públicos no cumprimento de suas competências legais, ou entre esses e entes privados, reciprocamente, com autorização específica, para uma ou mais modalidades de tratamento permitidas por esses entes públicos, ou entre entes privados</li></ul><ul id="f8a579ff-8f54-43d0-bab4-f6086c3e1149" class="bulleted-list"><li>relatório de impacto à proteção de dados pessoais: documentação do controlador que contém a descrição dos processos de tratamento de dados pessoais que podem gerar riscos às liberdades civis e aos direitos fundamentais, bem como medidas, salvaguardas e mecanismos de mitigação de risco</li></ul><ul id="0d6a0ef1-5f4e-483d-b1f0-43711fce0bce" class="bulleted-list"><li>órgão de pesquisa: órgão ou entidade da administração pública direta ou indireta ou pessoa jurídica de direito privado sem fins lucrativos legalmente constituída sob as leis brasileiras, com sede e foro no País, que inclua em sua missão institucional ou em seu objetivo social ou estatutário a pesquisa básica ou aplicada de caráter histórico, científico, tecnológico ou estatístico</li></ul><ul id="8564ca6c-a9e2-4536-8913-8d7df727eebb" class="bulleted-list"><li>autoridade nacional: órgão da administração pública responsável por zelar, implementar e fiscalizar o cumprimento desta Lei em todo o território nacional</li></ul><p id="5d7ce090-fc44-46c1-9efd-4bf4fb48cddf" class="">
+</p><p id="0f2907b0-83e5-40cc-919e-b36699c9bffc" class="">Art. 6º - As atividades de tratamento de dados pessoais deverão observar a boa-fé e os seguintes princípios: **( A boa-fé é um princípio do direito do consumidor, segundo o qual as partes possuem o dever de agir com base em valores éticos e morais da sociedade. )</p><ul id="ac449d30-3b45-471f-9025-77f5e11556a3" class="bulleted-list"><li>finalidade: realização do tratamento para propósitos legítimos, específicos, explícitos e informados ao titular, sem possibilidade de tratamento posterior de forma incompatível com essas finalidades</li></ul><ul id="dd5232f9-a622-434b-85fd-2b2a17ab4351" class="bulleted-list"><li>adequação: compatibilidade do tratamento com as finalidades informadas ao titular, de acordo com o contexto do tratamento</li></ul><ul id="52ffea9c-6b18-4ffa-9ba5-ff82fc9a31d6" class="bulleted-list"><li>necessidade: limitação do tratamento ao mínimo necessário para a realização de suas finalidades, com abrangência dos dados pertinentes, proporcionais e não excessivos em relação às finalidades do tratamento de dados</li></ul><ul id="8e844e8d-59b5-410d-9216-690c3685d67c" class="bulleted-list"><li>livre acesso: garantia, aos titulares, de consulta facilitada e gratuita sobre a forma e a duração do tratamento, bem como sobre a integralidade de seus dados pessoais</li></ul><ul id="fee45b54-4e1f-4172-9231-ad51f9e91545" class="bulleted-list"><li>qualidade dos dados: garantia, aos titulares, de exatidão, clareza, relevância e atualização dos dados, de acordo com a necessidade e para o cumprimento da finalidade de seu tratamento</li></ul><ul id="5d7aea70-ed60-4140-9359-a5b0659f3324" class="bulleted-list"><li>transparência: garantia, aos titulares, de informações claras, precisas e facilmente acessíveis sobre a realização do tratamento e os respectivos agentes de tratamento, observados os segredos comercial e industrial</li></ul><ul id="667bfceb-a770-492f-b559-a90ccc173f0b" class="bulleted-list"><li>segurança: utilização de medidas técnicas e administrativas aptas a proteger os dados pessoais de acessos não autorizados e de situações acidentais ou ilícitas de destruição, perda, alteração, comunicação ou difusão</li></ul><ul id="1fdce54c-7e52-4d46-8359-49ea1355afd3" class="bulleted-list"><li>prevenção: adoção de medidas para prevenir a ocorrência de danos em virtude do tratamento de dados pessoais</li></ul><ul id="497ba9c0-08fa-47e4-9a62-5901563adc40" class="bulleted-list"><li>não discriminação: impossibilidade de realização do tratamento para fins discriminatórios ilícitos ou abusivos</li></ul><ul id="3656c714-12ae-4f71-b50e-4cd4daacbc8b" class="bulleted-list"><li>responsabilização e prestação de contas: demonstração, pelo agente, da adoção de medidas eficazes e capazes de comprovar a observância e o cumprimento das normas de proteção de dados pessoais e, inclusive, da eficácia dessas medidas</li></ul><p id="f9281ec5-3c4c-4ca6-affc-c39488f67530" class="">
+</p><hr id="8187daf4-62a2-468d-bf91-d36bcae21c15"/><h1 id="b5c0235c-b730-4afd-b7cb-494379c4215f" class="">CAPÍTULO II - TRATAMENTO DE DADOS PESSOAIS</h1><h2 id="5da60faa-e8ed-4e55-aa31-a05a4b83709c" class=""><strong>Seção I - Dos Requisitos para o Tratamento de Dados Pessoais</strong></h2><p id="9fe9295d-e87a-4af0-b3ab-f4ec49f218e1" class="">Art. 7º - O tratamento de dados pessoais somente poderá ser realizado nas seguintes hipóteses:</p><ul id="809804cb-7240-499a-80d9-82158e19990e" class="bulleted-list"><li>mediante o fornecimento de consentimento pelo titular</li></ul><ul id="1a4ba31e-1b16-4e95-a2f1-b2c4acae8d40" class="bulleted-list"><li>para o cumprimento de obrigação legal ou regulatória pelo controlador</li></ul><ul id="76881078-eb29-4742-bc2e-420aa6c67253" class="bulleted-list"><li>pela administração pública, para o tratamento e uso compartilhado de dados necessários à execução de políticas públicas previstas em leis e regulamentos ou respaldadas em contratos, convênios ou instrumentos congêneres</li></ul><ul id="25c5ffd6-5068-45a4-90f2-16d882813b0f" class="bulleted-list"><li>para a realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais</li></ul><ul id="a409d473-2af7-409a-923e-4cde4d9ecb63" class="bulleted-list"><li>quando necessário para a execução de contrato ou de procedimentos preliminares relacionados a contrato do qual seja parte o titular, a pedido do titular dos dados</li></ul><ul id="dfc147ac-f705-4f2c-b4e4-9b75f103f815" class="bulleted-list"><li>para o exercício regular de direitos em processo judicial, administrativo ou arbitral, esse último nos termos da <a href="http://www.planalto.gov.br/ccivil_03/LEIS/L9307.htm">Lei nº 9.307, de 23 de setembro de 1996 (Lei de Arbitragem)</a></li></ul><ul id="fe0f1487-297e-4c19-9570-1b60b296769f" class="bulleted-list"><li>para a proteção da vida ou da incolumidade física do titular ou de terceiro</li></ul><ul id="fac8fc26-7d6f-4a95-9962-03a2608e6ab7" class="bulleted-list"><li>para a tutela da saúde, exclusivamente, em procedimento realizado por profissionais de saúde, serviços de saúde ou autoridade sanitária</li></ul><ul id="a3ee9c3f-f9b3-4e52-908a-204f7b986987" class="bulleted-list"><li>quando necessário para atender aos interesses legítimos do controlador ou de terceiro, exceto no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais</li></ul><ul id="73560c1d-50c3-4b36-9cf9-c869b7240df2" class="bulleted-list"><li>para a proteção do crédito, inclusive quanto ao disposto na legislação pertinente</li></ul><p id="e15b8f3e-8d30-4a10-a2fa-d02d713ad2cc" class="">
+</p><p id="eaa16790-0838-4383-b8b7-e69e942f3d38" class="">Art. 8º - O consentimento previsto no inciso I do art. 7º desta Lei deverá ser fornecido por escrito ou por outro meio que demonstre a manifestação de vontade do titular.</p><ul id="36756341-c6ea-456c-92c5-1cbaa3234ee9" class="bulleted-list"><li>Caso o consentimento seja fornecido por escrito, esse deverá constar de cláusula destacada das demais cláusulas contratuais</li></ul><ul id="d32e811a-7d27-4059-ae46-a5c7f684f5a4" class="bulleted-list"><li>Cabe ao controlador o ônus da prova de que o consentimento foi obtido em conformidade com o disposto nesta Lei</li></ul><ul id="824bdf15-2efd-4bb6-b374-7e386cb28acb" class="bulleted-list"><li>É vedado o tratamento de dados pessoais mediante vício de consentimento</li></ul><ul id="805c7ff5-ba19-4cd1-8d7f-d0b1ba5ba50a" class="bulleted-list"><li>O consentimento deverá referir-se a finalidades determinadas, e as autorizações genéricas para o tratamento de dados pessoais serão nulas</li></ul><ul id="abfc07a4-c5a8-4ee4-b4ff-363bb5b893d2" class="bulleted-list"><li>O consentimento pode ser revogado a qualquer momento mediante manifestação expressa do titular, por procedimento gratuito e facilitado, ratificados os tratamentos realizados sob amparo do consentimento anteriormente manifestado enquanto não houver requerimento de eliminação, nos termos do inciso VI do caput do art. 18 desta Lei</li></ul><ul id="af2d61bc-34ee-4dad-929a-66440e79d210" class="bulleted-list"><li>Em caso de alteração de informação referida nos incisos I, II, III ou V do art. 9º desta Lei, o controlador deverá informar ao titular, com destaque de forma específica do teor das alterações, podendo o titular, nos casos em que o seu consentimento é exigido, revogá-lo caso discorde da alteração</li></ul><p id="f95c29c7-39be-43b3-b3f2-eccd879c86e3" class="">
+</p><p id="0d6dd742-cf3b-4769-b645-72f180bfe746" class="">Art. 9º - O titular tem direito ao acesso facilitado às informações sobre o tratamento de seus dados, que deverão ser disponibilizadas de forma clara, adequada e ostensiva acerca de, entre outras características previstas em regulamentação para o atendimento do princípio do livre acesso:</p><ul id="e31d7075-5b7e-42af-8789-72bb95144117" class="bulleted-list"><li>finalidade específica do tratamento</li></ul><ul id="091e057d-1e00-4499-b803-ccecc526de9a" class="bulleted-list"><li>forma e duração do tratamento, observados os segredos comercial e industrial</li></ul><ul id="e7e79100-4c12-48a3-87d8-274099a403c4" class="bulleted-list"><li>identificação do controlador</li></ul><ul id="670c442d-cf1c-4886-b6e1-c7e1b2ddd268" class="bulleted-list"><li>informações de contato do controlador</li></ul><ul id="90282585-a0a3-4573-90ee-24467bfe6294" class="bulleted-list"><li>informações acerca do uso compartilhado de dados pelo controlador e a finalidade</li></ul><ul id="caadbebb-0b0d-4d10-aa70-783afa89ee8f" class="bulleted-list"><li>responsabilidades dos agentes que realizarão o tratamento</li></ul><ul id="c846b1a9-27ac-48a2-b400-c4ca5ea53cb7" class="bulleted-list"><li>direitos do titular, com menção explícita aos direitos contidos no art. 18 desta Lei</li></ul><p id="d72c1f9a-c640-4dc2-94ca-90503019cb1b" class="">
+</p><p id="57987563-5676-40ea-875e-6fde12c1035d" class="">Art. 10. - O legítimo interesse do controlador somente poderá fundamentar tratamento de dados pessoais para finalidades legítimas, consideradas a partir de situações concretas, que incluem, mas não se limitam a:</p><ul id="105e0510-a0c6-47c0-b083-459707915e47" class="bulleted-list"><li>apoio e promoção de atividades do controlador</li></ul><ul id="2a85db64-a96f-4ffe-8526-212de8f5973f" class="bulleted-list"><li>proteção, em relação ao titular, do exercício regular de seus direitos ou prestação de serviços que o beneficiem, respeitadas as legítimas expectativas dele e os direitos e liberdades fundamentais, nos termos desta Lei</li></ul><hr id="65e6b018-9d24-43bc-942d-84dbdb32a6ab"/><h2 id="433e8ac1-0325-460b-903a-4e52dfd38367" class=""><strong>Seção II - Do Tratamento de Dados Pessoais Sensíveis</strong></h2><p id="979c8319-b338-410e-8d00-2a79f7f83c63" class="">Art. 11. - O tratamento de dados pessoais sensíveis somente poderá ocorrer nas seguintes hipóteses:</p><ul id="98cb161a-9f06-4305-b3c4-f1ed2a72ca9f" class="bulleted-list"><li>quando o titular ou seu responsável legal consentir, de forma específica e destacada, para finalidades específicas</li></ul><ul id="7cb2572a-48ee-419f-80ae-b6a818bfbcb2" class="bulleted-list"><li>sem fornecimento de consentimento do titular, nas hipóteses em que for indispensável para:<ul id="52f114e7-54ff-43df-9c0a-979cf6cc9c1a" class="bulleted-list"><li>cumprimento de obrigação legal ou regulatória pelo controlador</li></ul><ul id="17ad8f97-f52b-480d-adf3-5dff65c2ad1a" class="bulleted-list"><li>tratamento compartilhado de dados necessários à execução, pela administração pública, de políticas públicas previstas em leis ou regulamentos</li></ul><ul id="030a5506-42f6-4ef0-8c44-1a26cf394a1f" class="bulleted-list"><li>realização de estudos por órgão de pesquisa, garantida, sempre que possível, a anonimização dos dados pessoais sensíveis</li></ul><ul id="c44f0f50-65c0-4031-b745-37dbb493edd9" class="bulleted-list"><li>exercício regular de direitos, inclusive em contrato e em processo judicial, administrativo e arbitral, este último nos termos da <a href="http://www.planalto.gov.br/ccivil_03/LEIS/L9307.htm">Lei nº 9.307, de 23 de setembro de 1996 (Lei de Arbitragem)</a></li></ul><ul id="da92b8ce-7579-496e-8064-3bf9441c0140" class="bulleted-list"><li>proteção da vida ou da incolumidade física do titular ou de terceiro</li></ul><ul id="5032abfe-33ea-4dd2-98da-65ba807a3e5a" class="bulleted-list"><li>tutela da saúde, exclusivamente, em procedimento realizado por profissionais de saúde, serviços de saúde ou autoridade sanitária</li></ul><ul id="3d7e3250-9353-4efa-8fa9-f340845844fa" class="bulleted-list"><li>garantia da prevenção à fraude e à segurança do titular, nos processos de identificação e autenticação de cadastro em sistemas eletrônicos, resguardados os direitos mencionados no art. 9º desta Lei e exceto no caso de prevalecerem direitos e liberdades fundamentais do titular que exijam a proteção dos dados pessoais</li></ul></li></ul><p id="bd6b6888-66c8-4907-8820-a1d70e59787b" class="">É vedada a comunicação ou o uso compartilhado entre controladores de dados pessoais sensíveis referentes à saúde com objetivo de obter vantagem econômica, exceto nas hipóteses relativas a prestação de serviços de saúde, de assistência farmacêutica e de assistência à saúde, desde que observado o § 5º deste artigo, incluídos os serviços auxiliares de diagnose e terapia, em benefício dos interesses dos titulares de dados, e para permitir:</p><ul id="877d471c-e932-41b4-a089-c7753bb71cc2" class="bulleted-list"><li>a portabilidade de dados quando solicitada pelo titular</li></ul><ul id="c6231a1d-5d41-472f-b29d-1fbc6d6279d2" class="bulleted-list"><li>as transações financeiras e administrativas resultantes do uso e da prestação dos serviços de que trata este parágrafo</li></ul><p id="358937ec-ecb6-44b1-94af-6694b73a424b" class="">É vedado às operadoras de planos privados de assistência à saúde o tratamento de dados de saúde para a prática de seleção de riscos na contratação de qualquer modalidade, assim como na contratação e exclusão de beneficiários.</p><p id="87d77963-7442-4312-8d5b-801ee094d75d" class="">
+</p><p id="1b269cef-696b-49b0-b537-cc907b80872f" class="">Art. 12. - Os dados anonimizados não serão considerados dados pessoais para os fins desta Lei, salvo quando o processo de anonimização ao qual foram submetidos for revertido, utilizando exclusivamente meios próprios, ou quando, com esforços razoáveis, puder ser revertido.</p><ul id="8abbd08e-0684-473a-bfb2-b151913802e3" class="bulleted-list"><li>A determinação do que seja razoável deve levar em consideração fatores objetivos, tais como custo e tempo necessários para reverter o processo de anonimização, de acordo com as tecnologias disponíveis, e a utilização exclusiva de meios próprios</li></ul><ul id="7602e989-6976-4b21-8dcc-f20f90614c12" class="bulleted-list"><li>Poderão ser igualmente considerados como dados pessoais, para os fins desta Lei, aqueles utilizados para formação do perfil comportamental de determinada pessoa natural, se identificada</li></ul><ul id="5b18a2dc-b8c9-4f84-b68a-ae00248a383c" class="bulleted-list"><li>A autoridade nacional poderá dispor sobre padrões e técnicas utilizados em processos de anonimização e realizar verificações acerca de sua segurança, ouvido o Conselho Nacional de Proteção de Dados Pessoais</li></ul><p id="2fca766d-24f4-4b13-95c8-27aa16a5a796" class="">
+</p><p id="a7a856c3-5291-4014-bf09-47782ea29aa2" class="">Art. 13. - Na realização de estudos em saúde pública, os órgãos de pesquisa poderão ter acesso a bases de dados pessoais, que serão tratados exclusivamente dentro do órgão e estritamente para a finalidade de realização de estudos e pesquisas e mantidos em ambiente controlado e seguro, conforme práticas de segurança previstas em regulamento específico e que incluam, sempre que possível, a anonimização ou pseudonimização dos dados, bem como considerem os devidos padrões éticos relacionados a estudos e pesquisas.</p><ul id="105dd7b9-f76e-49c6-8c3e-bdb8699967f3" class="bulleted-list"><li>A divulgação dos resultados ou de qualquer excerto do estudo ou da pesquisa de que trata o caput deste artigo em nenhuma hipótese poderá revelar dados pessoais</li></ul><ul id="1c8c77e9-b781-44b1-9c9f-a7e98daf1af0" class="bulleted-list"><li>O órgão de pesquisa será o responsável pela segurança da informação prevista no caput deste artigo, não permitida, em circunstância alguma, a transferência dos dados a terceiro</li></ul><ul id="367d41ae-79de-41ac-aa8e-ea2098f59fd2" class="bulleted-list"><li>O acesso aos dados de que trata este artigo será objeto de regulamentação por parte da autoridade nacional e das autoridades da área de saúde e sanitárias, no âmbito de suas competências</li></ul><ul id="b3a03745-2930-4ae9-8236-0431f8a4cce6" class="bulleted-list"><li>Para os efeitos deste artigo, a pseudonimização é o tratamento por meio do qual um dado perde a possibilidade de associação, direta ou indireta, a um indivíduo, senão pelo uso de informação adicional mantida separadamente pelo controlador em ambiente controlado e seguro</li></ul><hr id="b111e633-73ba-4765-b605-3be4efa02293"/><h2 id="4c09f625-9d3b-4161-9540-740955a94141" class=""><strong>Seção III - Do Tratamento de Dados Pessoais de Crianças e de Adolescentes</strong></h2><p id="fa5113e6-e988-4f88-9aed-cdf1a017e33d" class="">
+</p></div></article></body></html>
